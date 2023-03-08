@@ -6,6 +6,7 @@ The project is divided in 3 steps:
 - Transform the scan so it aligns with ego's actual pose and render that scan
 <br>
 Regarding the second step I've decided to use ICP matching. I've just modified the c3-main.cpp file, adding a fuction performing IPC (), in order not to increase too much size of the main function.
+<br>
 As shown in the picture, the pose was never over 0.49 m, well below the given threshold .
 <p align="center">
   <img src="Pic/pass.png"/>
@@ -17,7 +18,7 @@ su - student
 cd /home/workspace/c3-project
 ./run_carla.sh
 ```
-On a second tab run the following code to start the programn:
+On a second tab run the following code to start the project:
 ```
 cd /home/workspace/c3-project
 cmake .
