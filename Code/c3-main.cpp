@@ -242,10 +242,9 @@ int main(){
 			// TODO: Find pose transform by using ICP or NDT matching
 			//pose = ....
           	
-          	//ACHTUNG!!! provare questo
           	pose = Pose(Point(vehicle->GetTransform().location.x, vehicle->GetTransform().location.y, vehicle->GetTransform().location.z), Rotate(vehicle->GetTransform().rotation.yaw * pi/180, vehicle->GetTransform().rotation.pitch * pi/180, vehicle->GetTransform().rotation.roll * pi/180)) - poseRef;
           
-          	Eigen::Matrix4d transform = ICP(mapCloud, cloudFiltered, pose, 10); //provare 8
+          	Eigen::Matrix4d transform = ICP(mapCloud, cloudFiltered, pose, 10); //8
             pose = getPose(transform);
 
 			// TODO: Transform scan so it aligns with ego's actual pose and render that scan
